@@ -1,0 +1,49 @@
+<section class="hero is-fullheight is-default is-bold is-slanted">
+  {% include navbar.html %}
+
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-5 is-offset-1 landing-caption">
+          <h1 class="title is-1 is-bold is-spaced">
+            {{ site.params.hero.tagline }}
+          </h1>
+          {% if site.params.hero.subTagline %} 
+          <h2 class="subtitle is-5 is-muted">
+            {{ site.params.hero.subTagline }}
+          </h2>
+          {% endif %}
+          <br>
+          {% if site.params.hero.buttonText %} 
+          <p class="has-text-left">
+            <a class="button cta is-large rounded primary-btn raised" href="{{ site.params.hero.buttonLink }}">
+              {{ site.params.hero.buttonText }}
+            </a>
+          </p>
+          {% endif %}
+        </div>
+        <div class="column is-5 is-offset-1">
+          <figure class="image is-4by3">
+            <img src="/static/img/{{ site.params.hero.image }}" alt="Description">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-foot mb-20">
+    <div class="container">
+      <div class="tabs is-centered">
+        <ul>
+          {% for bicon in site.params.hero.bottomIcons %}
+          <li>
+            <a>
+              <img class="partner-logo" src="/static/img/{{ bicon }}">
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

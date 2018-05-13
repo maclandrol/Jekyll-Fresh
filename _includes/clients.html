@@ -1,0 +1,33 @@
+<section class="section is-medium section-secondary">
+  <div class="container">
+    <div class="title-wrapper pb-40">
+      <h2 class="title is-2 section-title has-text-centered light-text pb-20">
+        {{ site.params.clients.tagline }}
+      </h2>
+      <h3 class="subtitle is-5 has-text-centered light-text">
+        {{ site.params.clients.subTagline }}
+      </h3>
+    </div>
+
+    <div class="columns is-vcentered mt-40">
+      {% for client in site.params.clients.clientExamples %}
+      <div class="column is-4">
+        <figure class="testimonial">
+          <blockquote>
+            {{ client.quote }}
+          </blockquote>
+          <div class="author">
+            <img src="/static/img/{{ client.image }}" alt="{{client.name}}"/>
+            <h5>
+              {{ client.name }}
+            </h5>
+            <span>
+              {{ client.position }}
+            </span>
+          </div>
+        </figure>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

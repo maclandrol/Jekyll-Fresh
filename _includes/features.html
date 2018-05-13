@@ -1,0 +1,31 @@
+<section class="section section-light-grey is-medium">
+  <div class="container">
+    <div class="title-wrapper huge-pb">
+      <h2 class="title section-title has-text-centered pb-20">{{ site.params.features.tagline }}</h2>
+      {% if site.params.feature.subTagline %}
+      <h3 class="subtitle is-5 has-text-centered">{{  site.params.feature.subTagline }}</h3>
+      {% endif %}
+    </div>
+
+    <div class="columns mt-80">
+      {% for pan in site.params.features.panels %}
+      <div class="column is-one-third">
+        <div class="feature-card is-bordered has-text-centered revealOnScroll delay-{{ pan.delay }}" data-animation="fadeInLeft">
+          <div class="card-title">
+            <h4>{{ pan.title }}</h4>
+          </div>
+          <div class="card-icon">
+            <img src="/static/img/{{ pan.image }}">
+          </div>
+          <div class="card-text">
+            <p>{{ pan.text }}</p>
+          </div>
+          <div class="card-action">
+            <a href="{{ pan.button.url }}" class="button btn-align-md primary-btn raised">{{ pan.button.text }}</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

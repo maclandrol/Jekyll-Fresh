@@ -1,0 +1,34 @@
+<section class="section is-medium">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+          <h1 class="title section-title">{{ site.params.sellingPoints.tagline }}</h1>
+      </div>
+      <div class="column is-7 mt-60">
+        {% for point in site.params.sellingPoints.points %} 
+        <article class="media icon-box">
+          <figure class="media-left">
+            <p class="image">
+              <img src="/static/img/{{ point.icon }}">
+            </p>
+          </figure>
+          <div class="media-content mt-50">
+            <div class="content">
+              <p>
+                <span class="icon-box-title">
+                  {{ point.title }}
+                </span>
+                <br><br>
+                <span class="icon-box-text">
+                  {{ point.description }}
+                </span>
+              </p>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
